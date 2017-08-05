@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="medal">
+        <attr name="type" format="enum">
+            <enum name="parent" value="0"/>
+            <enum name="children" value="1"/>/>
+        </attr>
+        <attr name="direction" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+        <attr name="turn" format="integer"/>
+        <attr name="loop" format="integer"/>
+        <attr name="speed" format="integer"/>
+        <attr name="degreeX" format="integer"/>
+        <attr name="degreeZ" format="integer"/>
+    </declare-styleable>
+</resources>
