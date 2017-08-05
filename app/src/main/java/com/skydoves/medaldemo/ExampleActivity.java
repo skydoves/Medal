@@ -22,7 +22,7 @@ import android.widget.ImageView;
 
 import com.skydoves.medal.MedalAnimation;
 
-public class MainActivity extends AppCompatActivity {
+public class ExampleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         MedalAnimation medalAnimation = new MedalAnimation.Builder()
                 .setDirection(MedalAnimation.LEFT)
-                .setSpeed(3500)
-                .setDegreeX(360)
-                .setDegreeZ(-360)
-                .setTurn(3)
+                .setSpeed(4200)
+                .setTurn(4)
                 .build();
 
+        ImageView imageView = (ImageView)findViewById(R.id.badge);
+        imageView.startAnimation(medalAnimation);
     }
 }

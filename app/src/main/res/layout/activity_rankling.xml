@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/colorAccent"
+        android:scrollbarSize="2dp"
+        android:divider="#2e3241"
+        android:dividerHeight="1dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:onClick="fab"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/medal2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        app:fabSize="normal" />
+
+</RelativeLayout>

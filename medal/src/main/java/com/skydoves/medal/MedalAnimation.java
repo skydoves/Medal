@@ -32,11 +32,18 @@ public class MedalAnimation extends Animation {
     private int height = 0;
 
     public static final int LEFT = 0;
-    public static final int RIGHT = 1;
+    public static final int DEFAULT_DEGREE = 360;
+
+    public static final int DEFAULT_DIRECTION = -1;
+    public static final int DEFAULT_TURN = 1;
+    public static final int DEFAULT_LOOP = 0;
+    public static final int DEFAULT_SPEED = 2500;
+    public static final int DEFAULT_DEGREE_X = 0;
+    public static final int DEFAULT_DEGREE_Z = 0;
 
     private MedalAnimation(Builder builder) {
         this.degreeX = builder.degreeX;
-        this.degreeY = 360 * builder.turn;
+        this.degreeY = DEFAULT_DEGREE * builder.turn;
         this.degreeZ = builder.degreeZ;
 
         if(builder.direction == LEFT) {
@@ -79,12 +86,12 @@ public class MedalAnimation extends Animation {
     }
 
     public static class Builder {
-        private int direction = -1;
-        private int turn = 1;
-        private int loop = 0;
-        private int speed = 2500;
-        private int degreeX = 0;
-        private int degreeZ = 0;
+        private int direction = DEFAULT_DIRECTION;
+        private int turn = DEFAULT_TURN;
+        private int loop = DEFAULT_LOOP;
+        private int speed = DEFAULT_SPEED;
+        private int degreeX = DEFAULT_DEGREE_X;
+        private int degreeZ = DEFAULT_DEGREE_Z;
 
         public Builder setDirection(int direction) {
             this.direction = direction;
