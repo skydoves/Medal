@@ -26,14 +26,7 @@ dependencies {
 ```
 
 ## Usage
-You can use like using normal layouts and you can give all of Views or GroupViews medal effect very simply.
-
-#### Add XML Namespace
-First add below XML Namespace inside your XML layout file.
-
-```xml
-xmlns:app="http://schemas.android.com/apk/res-auto"
-```
+You can use like using normal animation or layouts and you can give all of Views or GroupViews medal effect very simply.
 
 ### Medal Animation
 You can give all of views or GroupViews medal effect.
@@ -58,6 +51,13 @@ imageView.startAnimation(medalAnimation);
 ```
 
 ### MedalLayout
+#### Add XML Namespace
+First add below XML Namespace inside your XML layout file.
+
+```xml
+xmlns:app="http://schemas.android.com/apk/res-auto"
+```
+
 ```xml
 <com.skydoves.medal.MedalLayout
     android:layout_width="wrap_content"
