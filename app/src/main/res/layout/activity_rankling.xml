@@ -14,14 +14,22 @@
         android:divider="#2e3241"
         android:dividerHeight="1dp"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:onClick="fab"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/medal2"
+    <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        app:fabSize="normal" />
+        app:turn="1"
+        app:speed="2000"
+        app:direction="right">
+
+        <android.support.design.widget.FloatingActionButton
+            android:onClick="fab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/medal2"
+            app:fabSize="normal" />
+    </com.skydoves.medal.MedalLayout>
 
 </RelativeLayout>
