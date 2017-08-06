@@ -26,8 +26,6 @@ dependencies {
 ```
 
 ## Usage
-You can use like using normal animation or layouts and you can give all of Views or GroupViews medal effect very simply.
-
 ### Medal Animation
 You can give all of views or GroupViews medal effect.
 
@@ -51,6 +49,8 @@ imageView.startAnimation(medalAnimation);
 ```
 
 ### MedalLayout
+You can use like using normal layouts and you can give all of Views or GroupViews medal effect very simply.
+
 #### Add XML Namespace
 First add below XML Namespace inside your XML layout file.
 
