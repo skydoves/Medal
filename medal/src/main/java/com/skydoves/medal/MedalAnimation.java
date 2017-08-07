@@ -18,6 +18,8 @@ package com.skydoves.medal;
 
 import android.graphics.Camera;
 import android.graphics.Matrix;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
@@ -31,10 +33,14 @@ public class MedalAnimation extends Animation {
     private int width = 0;
     private int height = 0;
 
-    public static final int LEFT = 0;
+    private Builder builder;
+
+    public static final int PARENT = 1;
+    public static final int LEFT = 1;
     public static final int DEFAULT_DEGREE = 360;
 
-    public static final int DEFAULT_DIRECTION = -1;
+    public static final int DEFAULT_TYPE = -1;
+    public static final int DEFAULT_DIRECTION = 0;
     public static final int DEFAULT_TURN = 1;
     public static final int DEFAULT_LOOP = 0;
     public static final int DEFAULT_SPEED = 2500;
@@ -42,6 +48,7 @@ public class MedalAnimation extends Animation {
     public static final int DEFAULT_DEGREE_Z = 0;
 
     private MedalAnimation(Builder builder) {
+        this.builder = builder;
         this.degreeX = builder.degreeX;
         this.degreeY = DEFAULT_DEGREE * builder.turn;
         this.degreeZ = builder.degreeZ;
@@ -56,6 +63,28 @@ public class MedalAnimation extends Animation {
             this.setRepeatCount(Animation.INFINITE);
         } else {
             this.setRepeatCount(builder.loop-1);
+        }
+    }
+
+    public void startAnimation(View view) {
+        try {
+            view.startAnimation(builder.build());
+        } catch (Exception e) {
+            throw new RuntimeException("parent medal animation runtime exception");
+        }
+    }
+
+    public void startAnimation(ViewGroup viewGroup) {
+        if(builder.getType() == PARENT) {
+            viewGroup.startAnimation(builder.build());
+        } else {
+            try {
+                MedalAnimation medalAnimation = builder.build();
+                for (int i = 0; i < viewGroup.getChildCount(); i++)
+                    viewGroup.getChildAt(i).startAnimation(medalAnimation);
+            } catch (Exception e) {
+                throw new RuntimeException("child medal animation runtime exception");
+            }
         }
     }
 
@@ -86,12 +115,18 @@ public class MedalAnimation extends Animation {
     }
 
     public static class Builder {
+        private int type = DEFAULT_TYPE;
         private int direction = DEFAULT_DIRECTION;
         private int turn = DEFAULT_TURN;
         private int loop = DEFAULT_LOOP;
         private int speed = DEFAULT_SPEED;
         private int degreeX = DEFAULT_DEGREE_X;
         private int degreeZ = DEFAULT_DEGREE_Z;
+
+        public Builder setType(int type) {
+            this.type = type;
+            return this;
+        }
 
         public Builder setDirection(int direction) {
             this.direction = direction;
@@ -121,6 +156,10 @@ public class MedalAnimation extends Animation {
         public Builder setDegreeZ(int degreeZ) {
             this.degreeZ = degreeZ;
             return this;
+        }
+
+        public int getType() {
+            return type;
         }
 
         public MedalAnimation build() {

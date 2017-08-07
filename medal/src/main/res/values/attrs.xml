@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="medal">
+    <declare-styleable name="MedalLayout">
         <attr name="type" format="enum">
-            <enum name="parent" value="0"/>
-            <enum name="children" value="1"/>/>
+            <enum name="children" value="0"/>
+            <enum name="parent" value="1"/>/>
         </attr>
         <attr name="direction" format="enum">
-            <enum name="left" value="0"/>
-            <enum name="right" value="1"/>
+            <enum name="right" value="0"/>
+            <enum name="left" value="1"/>
         </attr>
         <attr name="turn" format="integer"/>
         <attr name="loop" format="integer"/>

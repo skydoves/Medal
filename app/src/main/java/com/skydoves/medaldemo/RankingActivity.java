@@ -99,7 +99,6 @@ public class RankingActivity extends AppCompatActivity {
             Listviewitem listviewitem = data.get(position);
 
             MedalAnimation medalAnimation = new MedalAnimation.Builder()
-                    .setDirection(MedalAnimation.LEFT)
                     .setSpeed(4200)
                     .setTurn(4)
                     .build();

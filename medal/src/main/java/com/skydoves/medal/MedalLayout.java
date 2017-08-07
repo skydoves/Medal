@@ -19,13 +19,9 @@ package com.skydoves.medal;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.view.animation.Animation;
 import android.widget.RelativeLayout;
 
 public class MedalLayout extends RelativeLayout {
-
-    private static final int TYPE_PARENT = 0;
-    private static final int TYPE_CHILDREN = 1;
 
     public MedalLayout(Context context) {
         super(context);
@@ -42,52 +38,35 @@ public class MedalLayout extends RelativeLayout {
     }
 
     private void getAttrs(AttributeSet attrs) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.medal);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.MedalLayout);
         setTypeArray(typedArray);
     }
 
     private void getAttrs(AttributeSet attrs, int defStyle) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.medal, defStyle, 0);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.MedalLayout, defStyle, 0);
         setTypeArray(typedArray);
     }
 
     private void setTypeArray(TypedArray typedArray) {
-        final MedalAnimation animation = new MedalAnimation.Builder()
-                .setDegreeX(typedArray.getInt(R.styleable.medal_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
-                .setDegreeZ(typedArray.getInt(R.styleable.medal_degreeZ, MedalAnimation.DEFAULT_DEGREE_Z))
-                .setDirection(typedArray.getInt(R.styleable.medal_direction, MedalAnimation.DEFAULT_DIRECTION))
-                .setSpeed(typedArray.getInt(R.styleable.medal_speed, MedalAnimation.DEFAULT_SPEED))
-                .setTurn(typedArray.getInt(R.styleable.medal_turn, MedalAnimation.DEFAULT_TURN))
-                .setLoop(typedArray.getInt(R.styleable.medal_loop, MedalAnimation.DEFAULT_LOOP))
+        final MedalAnimation medalAnimation = new MedalAnimation.Builder()
+                .setDegreeX(typedArray.getInt(R.styleable.MedalLayout_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
+                .setDegreeZ(typedArray.getInt(R.styleable.MedalLayout_degreeZ, MedalAnimation.DEFAULT_DEGREE_Z))
+                .setDirection(typedArray.getInt(R.styleable.MedalLayout_direction, MedalAnimation.DEFAULT_DIRECTION))
+                .setSpeed(typedArray.getInt(R.styleable.MedalLayout_speed, MedalAnimation.DEFAULT_SPEED))
+                .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, MedalAnimation.DEFAULT_TURN))
+                .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.DEFAULT_TYPE))
+                .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, MedalAnimation.DEFAULT_LOOP))
                 .build();
 
-        final int type = typedArray.getInt(R.styleable.medal_type, TYPE_PARENT);
-        if(type == TYPE_PARENT) {
-            doParentAnimation(animation);
-        } else if(type == TYPE_CHILDREN) {
-            this.post(new Runnable() {
-                @Override
-                public void run() {
-                    doChildrenAnimation(animation);
-                }
-            });
-        }
+        this.post(new Runnable() {
+            @Override
+            public void run() {
+                onFinishDraw(medalAnimation);
+            }
+        });
     }
 
-    private void doParentAnimation(Animation animation) {
-        try {
-            this.startAnimation(animation);
-        } catch (Exception e) {
-            throw new RuntimeException("parent medal animation runtime exception");
-        }
-    }
-
-    private void doChildrenAnimation(Animation animation) {
-        try {
-            for (int i = 0; i < this.getChildCount(); i++)
-                this.getChildAt(i).startAnimation(animation);
-        } catch (Exception e) {
-            throw new RuntimeException("child medal animation runtime exception");
-        }
+    private void onFinishDraw(MedalAnimation medalAnimation) {
+        medalAnimation.startAnimation(this);
     }
 }
