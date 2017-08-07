@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.skydoves:medal:1.0.0'
+  compile 'com.github.skydoves:medal:1.0.1'
 }
 ```
 
@@ -21,7 +21,7 @@ dependencies {
 <dependency>
   <groupId>com.github.skydoves</groupId>
   <artifactId>medal</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
@@ -33,16 +33,21 @@ You can give all of views or GroupViews medal effect.
 You can make instance using Builder and customize using set() methods.
 ```xml
 MedalAnimation medalAnimation = new MedalAnimation.Builder()
-                .setDirection(MedalAnimation.LEFT) // default direction is RIGHT
-                .setDegreeX(360) // default degreeX is 0
-                .setDegreeZ(360) // default degreeZ is 0
-                .setSpeed(4200) // default speed is 2300
-                .setTurn(4) // default turn is 1
-                .setLoop(10) // default loop is infinite loop
+                .setDirection(MedalAnimation.LEFT)
+                .setDegreeX(360)
+                .setDegreeZ(360)
+                .setSpeed(4200)
+                .setTurn(4)
+                .setLoop(10)
                 .build();
 ```
 
 #### Apply Animation Example
+```xml
+medalAnimation.startAnimation(findViewById(R.id.badge));
+```
+
+or
 ```xml
 ImageView imageView = (ImageView)findViewById(R.id.badge);
 imageView.startAnimation(medalAnimation);
@@ -78,15 +83,15 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
 #### MedalLayout Attributes
-```xml
-type | parent or children
-direction | left or right
-turn | Integer // successive turning count.
-speed | Integer
-loop | Integer // default is infinite loop. but if you set loop attr, just looping the number and end.
-degreeX | Integer
-degreeZ | Integer
-```
+Parameter  |  Format  |  Default  |  Description
+--- | --- | --- | ---
+type | children(0) or parent(1) | children(0) | target of animation
+direction | right(0) or left(1) | right(0) | direction of animation
+turn | Integer | 1 | counts of turns per a loop (if turn value is 3, turn 3 per loop)
+loop | Integer | infinite(0) | loop of animation
+speed | Integer | 2300 | duration per loop
+degreeX | Integer | 0 |  turning degree of axis x
+degreeZ | Integer | 0 | turning degree of axis Z
 
 # License
 ```xml
