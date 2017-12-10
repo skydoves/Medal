@@ -1,4 +1,5 @@
 # Medal
+![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)</br>
 Medal can be used to add medal effect to your Android views.<br>
 
 ![gif](https://user-images.githubusercontent.com/24237865/29002172-9dd7875e-7ad7-11e7-8929-4be72902ec5d.gif)
