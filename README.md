@@ -1,29 +1,25 @@
 # Medal
 ![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)</br>
-Medal can be used to add medal effect to your Android views.<br>
+A library that lets you implement medal animation.<br>
 
 ![gif](https://user-images.githubusercontent.com/24237865/29002172-9dd7875e-7ad7-11e7-8929-4be72902ec5d.gif)
 ![gif2](https://user-images.githubusercontent.com/24237865/29002173-9dec8d16-7ad7-11e7-91e7-9a28a39043c0.gif)
 
 ## Download
-#### build.gradle
-```java
-repositories {
-  mavenCentral() // or jcenter() works as well
-}
-
-dependencies {
-  compile 'com.github.skydoves:medal:1.0.1'
+### Gradle
+Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
+```gradle
+allprojects {
+    repositories {
+        jcenter()
+    }
 }
 ```
-
-#### or Maven
-```xml
-<dependency>
-  <groupId>com.github.skydoves</groupId>
-  <artifactId>medal</artifactId>
-  <version>1.0.1</version>
-</dependency>
+And add a dependency code to your **module**'s `build.gradle` file.
+```gradle
+dependencies {
+  implementation "com.github.skydoves:medal:1.0.1"
+}
 ```
 
 ## Usage
@@ -32,7 +28,7 @@ You can give all of views or GroupViews medal effect.
 
 #### Create Medal Animation Instance
 You can make instance using Builder and customize using set() methods.
-```xml
+```java
 MedalAnimation medalAnimation = new MedalAnimation.Builder()
                 .setDirection(MedalAnimation.LEFT)
                 .setDegreeX(360)
@@ -44,12 +40,11 @@ MedalAnimation medalAnimation = new MedalAnimation.Builder()
 ```
 
 #### Apply Animation Example
-```xml
+```java
 medalAnimation.startAnimation(findViewById(R.id.badge));
 ```
-
 or
-```xml
+```java
 ImageView imageView = (ImageView)findViewById(R.id.badge);
 imageView.startAnimation(medalAnimation);
 ```
@@ -60,11 +55,12 @@ You can use like using normal layouts and you can give all of Views or GroupView
 #### Add XML Namespace
 First add below XML Namespace inside your XML layout file.
 
-```xml
+```gradle
 xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
-```xml
+#### MedalLayout in layout
+```gradle
 <com.skydoves.medal.MedalLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
