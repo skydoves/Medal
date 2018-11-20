@@ -1,5 +1,6 @@
 # Medal
-![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)</br>
+![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15) </br>
 A library that lets you implement medal animation.<br>
 
 ![gif](https://user-images.githubusercontent.com/24237865/29002172-9dd7875e-7ad7-11e7-8929-4be72902ec5d.gif)
@@ -15,10 +16,12 @@ allprojects {
     }
 }
 ```
+
 And add a dependency code to your **module**'s `build.gradle` file.
+
 ```gradle
 dependencies {
-  implementation "com.github.skydoves:medal:1.0.1"
+    implementation "com.github.skydoves:medal:1.0.1"
 }
 ```
 
@@ -43,9 +46,11 @@ MedalAnimation medalAnimation = new MedalAnimation.Builder()
 ```java
 medalAnimation.startAnimation(findViewById(R.id.badge));
 ```
+
 or
+
 ```java
-ImageView imageView = (ImageView)findViewById(R.id.badge);
+ImageView imageView = findViewById(R.id.badge);
 imageView.startAnimation(medalAnimation);
 ```
 
