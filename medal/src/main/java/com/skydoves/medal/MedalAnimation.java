@@ -32,6 +32,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
+@SuppressWarnings("WeakerAccess")
 public class MedalAnimation extends Animation {
 
     private Camera camera;

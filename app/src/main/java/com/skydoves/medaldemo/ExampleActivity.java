@@ -17,7 +17,7 @@
 package com.skydoves.medaldemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.skydoves.medal.MedalAnimation;
@@ -42,7 +42,7 @@ public class ExampleActivity extends AppCompatActivity {
                 .setTurn(4)
                 .build();
 
-        ImageView imageView = (ImageView)findViewById(R.id.badge);
+        ImageView imageView = findViewById(R.id.badge);
         imageView.startAnimation(medalAnimation);
     }
 }
