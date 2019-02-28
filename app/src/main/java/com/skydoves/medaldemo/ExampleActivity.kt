@@ -21,3 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package com.skydoves.medaldemo
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.skydoves.medal.MedalAnimation
+import kotlinx.android.synthetic.main.activity_main.*
+
+class ExampleActivity : AppCompatActivity() {
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+
+    val medalAnimationTextView = MedalAnimation.Builder().setSpeed(3000).setTurn(1).build()
+    medalAnimationTextView.startAnimation(textView_title)
+
+    val medalAnimation = MedalAnimation.Builder()
+        .setDirection(MedalAnimation.LEFT)
+        .setSpeed(4200)
+        .setTurn(4)
+        .build()
+
+    badge.startAnimation(medalAnimation)
+  }
+}

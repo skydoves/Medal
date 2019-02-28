@@ -21,37 +21,3 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.skydoves.medaldemo;
-
-import android.graphics.drawable.Drawable;
-
-/** Developed by skydoves on 2019-02-28. Copyright (c) 2018 skydoves rights reserved. */
-public class RankingItem {
-  private Drawable medal;
-  private Drawable profile;
-  private String name;
-  private String content;
-
-  public RankingItem(Drawable medal, Drawable profile, String name, String content) {
-    this.medal = medal;
-    this.profile = profile;
-    this.name = name;
-    this.content = content;
-  }
-
-  public Drawable getMedal() {
-    return medal;
-  }
-
-  public Drawable getProfile() {
-    return profile;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public String getContent() {
-    return content;
-  }
-}
