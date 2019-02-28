@@ -1,12 +1,16 @@
 # Medal
 ![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)
-[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15) </br>
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+[![Build Status](https://travis-ci.org/skydoves/Medal.svg?branch=master)](https://travis-ci.org/skydoves/Medal) </br>
 A library that lets you implement medal animation.<br>
 
 ![gif](https://user-images.githubusercontent.com/24237865/29002172-9dd7875e-7ad7-11e7-8929-4be72902ec5d.gif)
 ![gif2](https://user-images.githubusercontent.com/24237865/29002173-9dec8d16-7ad7-11e7-91e7-9a28a39043c0.gif)
 
 ## Download
+[![Download](https://api.bintray.com/packages/devmagician/maven/medal/images/download.svg)](https://bintray.com/devmagician/maven/medal/_latestVersion)
+[![Jitpack](https://jitpack.io/v/skydoves/Medal.svg)](https://jitpack.io/#skydoves/Medal)
+
 ### Gradle
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
 ```gradle
@@ -26,45 +30,13 @@ dependencies {
 ```
 
 ## Usage
-### Medal Animation
-You can give all of views or GroupViews medal effect.
-
-#### Create Medal Animation Instance
-You can make instance using Builder and customize using set() methods.
-```java
-MedalAnimation medalAnimation = new MedalAnimation.Builder()
-                .setDirection(MedalAnimation.LEFT)
-                .setDegreeX(360)
-                .setDegreeZ(360)
-                .setSpeed(4200)
-                .setTurn(4)
-                .setLoop(10)
-                .build();
-```
-
-#### Apply Animation Example
-```java
-medalAnimation.startAnimation(findViewById(R.id.badge));
-```
-
-or
-
-```java
-ImageView imageView = findViewById(R.id.badge);
-imageView.startAnimation(medalAnimation);
-```
-
-### MedalLayout
-You can use like using normal layouts and you can give all of Views or GroupViews medal effect very simply.
-
-#### Add XML Namespace
-First add below XML Namespace inside your XML layout file.
+Add following XML namespace inside your XML layout file.
 
 ```gradle
 xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
-#### MedalLayout in layout
+### MedalLayout in layout
 ```gradle
 <com.skydoves.medal.MedalLayout
     android:layout_width="wrap_content"
@@ -84,7 +56,32 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 </com.skydoves.medal.MedalLayout>
 ```
 
-#### MedalLayout Attributes
+### create using builder
+This is how to create `MedalAnimation`'s instance using `MedalAnimation.Builder` class.
+```java
+MedalAnimation medalAnimation = new MedalAnimation.Builder()
+         .setDirection(MedalAnimation.LEFT)
+         .setDegreeX(360)
+         .setDegreeZ(360)
+         .setSpeed(4200)
+         .setTurn(4)
+         .setLoop(10)
+         .build();
+```
+
+### start animation
+```java
+medalAnimation.startAnimation(your_view);
+```
+
+or we can give medal effects using view's `startAnimation` method.
+
+```java
+ImageView imageView = findViewById(R.id.badge);
+imageView.startAnimation(medalAnimation);
+```
+
+## MedalLayout Attributes
 Parameter  |  Format  |  Default  |  Description
 --- | --- | --- | ---
 type | children(0) or parent(1) | children(0) | target of animation
