@@ -98,11 +98,11 @@ class MedalAnimation(private val builder: Builder) : Animation() {
   /** builder class for creating [MedalAnimation]. */
   class Builder {
     @JvmField
-    var type = PARENT
+    var type = DEFAULT_TARGET
     @JvmField
     var direction = DEFAULT_DIRECTION
     @JvmField
-    var turn = LEFT
+    var turn = DEFAULT_TURN
     @JvmField
     var loop = DEFAULT_LOOP
     @JvmField
@@ -127,8 +127,10 @@ class MedalAnimation(private val builder: Builder) : Animation() {
   companion object {
     const val PARENT = 1
     const val LEFT = 1
+    const val DEFAULT_TARGET = 0
     const val DEFAULT_DEGREE = 360
     const val DEFAULT_DIRECTION = 0
+    const val DEFAULT_TURN = 0
     const val DEFAULT_LOOP = 0
     const val DEFAULT_SPEED = 2500
     const val DEFAULT_DEGREE_X = 0

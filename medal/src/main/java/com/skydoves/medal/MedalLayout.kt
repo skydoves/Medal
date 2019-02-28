@@ -64,8 +64,8 @@ class MedalLayout : FrameLayout {
                 R.styleable.MedalLayout_direction, MedalAnimation.DEFAULT_DIRECTION))
         .setSpeed(
             typedArray.getInt(R.styleable.MedalLayout_speed, MedalAnimation.DEFAULT_SPEED))
-        .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, MedalAnimation.LEFT))
-        .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.PARENT))
+        .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, MedalAnimation.DEFAULT_TURN))
+        .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.DEFAULT_TARGET))
         .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, MedalAnimation.DEFAULT_LOOP))
         .build()
   }
