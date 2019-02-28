@@ -28,6 +28,7 @@ import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.widget.FrameLayout
 
+/** MedalLayout implements medal effects for itself and child views. */
 class MedalLayout : FrameLayout {
 
   lateinit var medalAnimation: MedalAnimation
@@ -71,6 +72,6 @@ class MedalLayout : FrameLayout {
 
   override fun onFinishInflate() {
     super.onFinishInflate()
-    medalAnimation.startAnimation(this)
+    this.medalAnimation.startAnimation(this)
   }
 }

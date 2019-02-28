@@ -29,6 +29,11 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.Transformation
 
+/** create a [MedalAnimation] by [MedalAnimation.Builder] using dsl. */
+fun medalAnimation(block: MedalAnimation.Builder.() -> Unit): MedalAnimation =
+    MedalAnimation.Builder().apply(block).build()
+
+/** MedalAnimation implements medal effects for views. */
 class MedalAnimation(private val builder: Builder) : Animation() {
 
   private val degreeX: Float
@@ -90,6 +95,7 @@ class MedalAnimation(private val builder: Builder) : Animation() {
     }
   }
 
+  /** builder class for creating [MedalAnimation]. */
   class Builder {
     @JvmField
     var type = PARENT
