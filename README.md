@@ -106,6 +106,7 @@ degreeZ | Integer | 0 | turning degree of axis Z
 - [Medal Library Animation Demo App](http://www.digitalmirko.com/androidMedalLibraryAnimationDemoApp.html)
 - [Using Medal library in Android Studio](https://www.youtube.com/watch?v=ohUWduZTZ-Y)
 - [40 Top Awesome Android Libraries May](https://medium.com/pongploydev/top-android-libraries-may-september-2017-for-android-developer-library-github-280859685963)
+- [How to Create Medal View In Android](https://www.youtube.com/watch?v=t2xsQaA6HGE)
 
 # License
 ```xml
