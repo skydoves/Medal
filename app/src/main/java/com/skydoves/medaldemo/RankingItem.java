@@ -23,31 +23,35 @@
  */
 package com.skydoves.medaldemo;
 
-import android.os.Bundle;
-import android.widget.ImageView;
-import androidx.appcompat.app.AppCompatActivity;
-import com.skydoves.medal.MedalAnimation;
+import android.graphics.drawable.Drawable;
 
-public class ExampleActivity extends AppCompatActivity {
+/** Developed by skydoves on 2019-02-28. Copyright (c) 2018 skydoves rights reserved. */
+public class RankingItem {
+  private Drawable medal;
+  private Drawable profile;
+  private String name;
+  private String content;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+  public RankingItem(Drawable medal, Drawable profile, String name, String content) {
+    this.medal = medal;
+    this.profile = profile;
+    this.name = name;
+    this.content = content;
+  }
 
-    MedalAnimation medalAnimation_tv =
-        new MedalAnimation.Builder().setSpeed(3000).setTurn(1).build();
+  public Drawable getMedal() {
+    return medal;
+  }
 
-    medalAnimation_tv.startAnimation(findViewById(R.id.textView_title));
+  public Drawable getProfile() {
+    return profile;
+  }
 
-    MedalAnimation medalAnimation =
-        new MedalAnimation.Builder()
-            .setDirection(MedalAnimation.LEFT)
-            .setSpeed(4200)
-            .setTurn(4)
-            .build();
+  public String getName() {
+    return name;
+  }
 
-    ImageView imageView = findViewById(R.id.badge);
-    imageView.startAnimation(medalAnimation);
+  public String getContent() {
+    return content;
   }
 }
