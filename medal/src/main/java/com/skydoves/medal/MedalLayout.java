@@ -26,9 +26,11 @@ package com.skydoves.medal;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.RelativeLayout;
+import android.widget.FrameLayout;
 
-public class MedalLayout extends RelativeLayout {
+public class MedalLayout extends FrameLayout {
+
+  private MedalAnimation medalAnimation;
 
   public MedalLayout(Context context) {
     super(context);
@@ -56,7 +58,7 @@ public class MedalLayout extends RelativeLayout {
   }
 
   private void setTypeArray(TypedArray typedArray) {
-    final MedalAnimation medalAnimation =
+    this.medalAnimation =
         new MedalAnimation.Builder()
             .setDegreeX(
                 typedArray.getInt(R.styleable.MedalLayout_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
@@ -71,17 +73,11 @@ public class MedalLayout extends RelativeLayout {
             .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.DEFAULT_TYPE))
             .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, MedalAnimation.DEFAULT_LOOP))
             .build();
-
-    this.post(
-        new Runnable() {
-          @Override
-          public void run() {
-            onFinishDraw(medalAnimation);
-          }
-        });
   }
 
-  private void onFinishDraw(MedalAnimation medalAnimation) {
+  @Override
+  protected void onFinishInflate() {
+    super.onFinishInflate();
     medalAnimation.startAnimation(this);
   }
 }

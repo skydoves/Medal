@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -12,7 +13,8 @@
         android:scrollbarThumbVertical="@color/colorAccent"
         android:scrollbarSize="2dp"
         android:divider="#2e3241"
-        android:dividerHeight="1dp"/>
+        android:dividerHeight="1dp"
+        tools:listitem="@layout/item_rank"/>
 
     <com.skydoves.medal.MedalLayout
         android:layout_width="wrap_content"
@@ -26,10 +28,9 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:onClick="fab"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/medal2"
             app:fabSize="normal" />
     </com.skydoves.medal.MedalLayout>
-
 </RelativeLayout>
