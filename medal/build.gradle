@@ -7,7 +7,7 @@ publish {
     userOrg = 'devmagician'
     groupId = 'com.github.skydoves'
     artifactId = 'medal'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'This is Medal by skydoves'
     website = 'https://github.com/skydoves/Medal'
     issueTracker = "${website}/issues"
