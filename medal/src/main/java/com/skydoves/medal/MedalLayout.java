@@ -1,4 +1,3 @@
-
 /*
  * The MIT License (MIT)
  *
@@ -22,7 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package com.skydoves.medal;
 
 import android.content.Context;
@@ -32,50 +30,58 @@ import android.widget.RelativeLayout;
 
 public class MedalLayout extends RelativeLayout {
 
-    public MedalLayout(Context context) {
-        super(context);
-    }
+  public MedalLayout(Context context) {
+    super(context);
+  }
 
-    public MedalLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        getAttrs(attrs);
-    }
+  public MedalLayout(Context context, AttributeSet attrs) {
+    super(context, attrs);
+    getAttrs(attrs);
+  }
 
-    public MedalLayout(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        getAttrs(attrs, defStyleAttr);
-    }
+  public MedalLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    super(context, attrs, defStyleAttr);
+    getAttrs(attrs, defStyleAttr);
+  }
 
-    private void getAttrs(AttributeSet attrs) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.MedalLayout);
-        setTypeArray(typedArray);
-    }
+  private void getAttrs(AttributeSet attrs) {
+    TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.MedalLayout);
+    setTypeArray(typedArray);
+  }
 
-    private void getAttrs(AttributeSet attrs, int defStyle) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.MedalLayout, defStyle, 0);
-        setTypeArray(typedArray);
-    }
+  private void getAttrs(AttributeSet attrs, int defStyle) {
+    TypedArray typedArray =
+        getContext().obtainStyledAttributes(attrs, R.styleable.MedalLayout, defStyle, 0);
+    setTypeArray(typedArray);
+  }
 
-    private void setTypeArray(TypedArray typedArray) {
-        final MedalAnimation medalAnimation = new MedalAnimation.Builder()
-                .setDegreeX(typedArray.getInt(R.styleable.MedalLayout_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
-                .setDegreeZ(typedArray.getInt(R.styleable.MedalLayout_degreeZ, MedalAnimation.DEFAULT_DEGREE_Z))
-                .setDirection(typedArray.getInt(R.styleable.MedalLayout_direction, MedalAnimation.DEFAULT_DIRECTION))
-                .setSpeed(typedArray.getInt(R.styleable.MedalLayout_speed, MedalAnimation.DEFAULT_SPEED))
-                .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, MedalAnimation.DEFAULT_TURN))
-                .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.DEFAULT_TYPE))
-                .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, MedalAnimation.DEFAULT_LOOP))
-                .build();
+  private void setTypeArray(TypedArray typedArray) {
+    final MedalAnimation medalAnimation =
+        new MedalAnimation.Builder()
+            .setDegreeX(
+                typedArray.getInt(R.styleable.MedalLayout_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
+            .setDegreeZ(
+                typedArray.getInt(R.styleable.MedalLayout_degreeZ, MedalAnimation.DEFAULT_DEGREE_Z))
+            .setDirection(
+                typedArray.getInt(
+                    R.styleable.MedalLayout_direction, MedalAnimation.DEFAULT_DIRECTION))
+            .setSpeed(
+                typedArray.getInt(R.styleable.MedalLayout_speed, MedalAnimation.DEFAULT_SPEED))
+            .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, MedalAnimation.DEFAULT_TURN))
+            .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.DEFAULT_TYPE))
+            .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, MedalAnimation.DEFAULT_LOOP))
+            .build();
 
-        this.post(new Runnable() {
-            @Override
-            public void run() {
-                onFinishDraw(medalAnimation);
-            }
+    this.post(
+        new Runnable() {
+          @Override
+          public void run() {
+            onFinishDraw(medalAnimation);
+          }
         });
-    }
+  }
 
-    private void onFinishDraw(MedalAnimation medalAnimation) {
-        medalAnimation.startAnimation(this);
-    }
+  private void onFinishDraw(MedalAnimation medalAnimation) {
+    medalAnimation.startAnimation(this);
+  }
 }
