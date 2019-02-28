@@ -2,7 +2,7 @@
 ![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 [![Build Status](https://travis-ci.org/skydoves/Medal.svg?branch=master)](https://travis-ci.org/skydoves/Medal) </br>
-A library that lets you implement medal animation.<br>
+Easy way to implement medal effect for Android. <br>
 
 ![gif](https://user-images.githubusercontent.com/24237865/29002172-9dd7875e-7ad7-11e7-8929-4be72902ec5d.gif)
 ![gif2](https://user-images.githubusercontent.com/24237865/29002173-9dec8d16-7ad7-11e7-91e7-9a28a39043c0.gif)
@@ -25,7 +25,7 @@ And add a dependency code to your **module**'s `build.gradle` file.
 
 ```gradle
 dependencies {
-    implementation "com.github.skydoves:medal:1.0.1"
+    implementation "com.github.skydoves:medal:1.0.2"
 }
 ```
 
@@ -69,6 +69,16 @@ MedalAnimation medalAnimation = new MedalAnimation.Builder()
          .build();
 ```
 
+### create using kotlin dsl
+This is how to create `MedalAnimation`'s instance using kotlin dsl.
+```kotlin 
+val medalAnimation = medalAnimation {
+     direction = MedalAnimation.LEFT
+     speed = 4200
+     turn = 4
+}
+```
+
 ### start animation
 ```java
 medalAnimation.startAnimation(your_view);
@@ -84,13 +94,18 @@ imageView.startAnimation(medalAnimation);
 ## MedalLayout Attributes
 Parameter  |  Format  |  Default  |  Description
 --- | --- | --- | ---
-type | children(0) or parent(1) | children(0) | target of animation
-direction | right(0) or left(1) | right(0) | direction of animation
+type | children or parent | parent | target of animation
+direction | right or left | left | direction of animation
 turn | Integer | 1 | counts of turns per a loop (if turn value is 3, turn 3 per loop)
 loop | Integer | infinite(0) | loop of animation
 speed | Integer | 2300 | duration per loop
 degreeX | Integer | 0 |  turning degree of axis x
 degreeZ | Integer | 0 | turning degree of axis Z
+
+## References
+- [Medal Library Animation Demo App](http://www.digitalmirko.com/androidMedalLibraryAnimationDemoApp.html)
+- [Using Medal library in Android Studio](https://www.youtube.com/watch?v=ohUWduZTZ-Y)
+- [40 Top Awesome Android Libraries May](https://medium.com/pongploydev/top-android-libraries-may-september-2017-for-android-developer-library-github-280859685963)
 
 # License
 ```xml
