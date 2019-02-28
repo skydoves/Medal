@@ -4,8 +4,8 @@
 [![Build Status](https://travis-ci.org/skydoves/Medal.svg?branch=master)](https://travis-ci.org/skydoves/Medal) </br>
 Easy way to implement medal effect for Android. <br>
 
-![gif](https://user-images.githubusercontent.com/24237865/29002172-9dd7875e-7ad7-11e7-8929-4be72902ec5d.gif)
-![gif2](https://user-images.githubusercontent.com/24237865/29002173-9dec8d16-7ad7-11e7-91e7-9a28a39043c0.gif)
+![gif0](https://user-images.githubusercontent.com/24237865/53584338-b8b5db00-3bc6-11e9-8cfd-9c8f2ad7cc90.gif)
+![gif1](https://user-images.githubusercontent.com/24237865/53584339-b94e7180-3bc6-11e9-8518-1bbb87b8f4ae.gif)
 
 ## Download
 [![Download](https://api.bintray.com/packages/devmagician/maven/medal/images/download.svg)](https://bintray.com/devmagician/maven/medal/_latestVersion)
@@ -94,8 +94,8 @@ imageView.startAnimation(medalAnimation);
 ## MedalLayout Attributes
 Parameter  |  Format  |  Default  |  Description
 --- | --- | --- | ---
-type | children or parent | parent | target of animation
-direction | right or left | left | direction of animation
+type | children or parent | children | target of animation
+direction | right or left | right | direction of animation
 turn | Integer | 1 | counts of turns per a loop (if turn value is 3, turn 3 per loop)
 loop | Integer | infinite(0) | loop of animation
 speed | Integer | 2300 | duration per loop
