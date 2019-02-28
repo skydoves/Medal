@@ -22,3 +22,5 @@ android {
         versionName "1.0"
     }
 }
+
+apply from: '../spotless.gradle'
