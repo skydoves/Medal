@@ -27,7 +27,7 @@ And add a dependency code to your **module**'s `build.gradle` file.
 
 ```gradle
 dependencies {
-    implementation "com.github.skydoves:medal:1.0.3"
+    implementation "com.github.skydoves:medal:1.0.4"
 }
 ```
 
@@ -62,31 +62,33 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 This is how to create `MedalAnimation`'s instance using `MedalAnimation.Builder` class.
 ```java
 MedalAnimation medalAnimation = new MedalAnimation.Builder()
-         .setDirection(MedalAnimation.LEFT)
-         .setDegreeX(360)
-         .setDegreeZ(360)
-         .setSpeed(4200)
-         .setTurn(4)
-         .setLoop(10)
-         .build();
+     .setDirection(MedalDirection.RIGHT)
+     .setDegreeX(360)
+     .setDegreeZ(360)
+     .setSpeed(4200)
+     .setTurn(4)
+     .setLoop(10)
+     .build();
 ```
 
 ### create using kotlin dsl
 This is how to create `MedalAnimation`'s instance using kotlin dsl.
 ```kotlin 
 val medalAnimation = medalAnimation {
-     direction = MedalAnimation.LEFT
+     direction = MedalDirection.LEFT
      speed = 4200
      turn = 4
 }
 ```
 
 ### start animation
+There are a few ways to start the medal animation.
 ```java
-medalAnimation.startAnimation(your_view);
+medalAnimation.startAnimation(targetView);
+medalLayout.startAnimation(targetView);
 ```
 
-or we can give medal effects using view's `startAnimation` method.
+or we can give a medal effect using view's `startAnimation` method.
 
 ```java
 ImageView imageView = findViewById(R.id.badge);
@@ -96,13 +98,14 @@ imageView.startAnimation(medalAnimation);
 ## MedalLayout Attributes
 Parameter  |  Format  |  Default  |  Description
 --- | --- | --- | ---
-type | children or parent | children | target of animation
-direction | right or left | right | direction of animation
-turn | Integer | 1 | counts of turns per a loop (if turn value is 3, turn 3 per loop)
-loop | Integer | infinite(0) | loop of animation
-speed | Integer | 2300 | duration per loop
-degreeX | Integer | 0 |  turning degree of axis x
-degreeZ | Integer | 0 | turning degree of axis Z
+autoStart | Boolean | true | sets medal animation starts automatically or not.
+type | children or parent | MedalTarget.CHILDREN | the target of medal animation to the ViewGroup.
+direction | right or left | MedalDirection.RIGHT | direction of medal animation.
+turn | Integer | 1 | number of turns per a loop.
+loop | Integer | infinite(0) | loop of the medal animation. The 0 value loops forever.
+speed | Integer | 2300 | Speed of the medal animation per loop.
+degreeX | Integer | 0 | rotation degree of axis x.
+degreeZ | Integer | 0 | rotation degree of axis Z.
 
 ## References
 - [Medal Library Animation Demo App](http://www.digitalmirko.com/androidMedalLibraryAnimationDemoApp.html)
