@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/background">
+
+  <ListView
+    android:id="@+id/listView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:divider="#2e3241"
+    android:dividerHeight="1dp"
+    android:scrollbarSize="2dp"
+    android:scrollbarThumbVertical="@color/colorAccent"
+    tools:listitem="@layout/item_rank" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbarThumbVertical="@color/colorAccent"
-        android:scrollbarSize="2dp"
-        android:divider="#2e3241"
-        android:dividerHeight="1dp"
-        tools:listitem="@layout/item_rank"/>
+  <com.skydoves.medal.MedalLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:layout_margin="16dp"
+    app:direction="right"
+    app:speed="2000"
+    app:turn="1">
 
-    <com.skydoves.medal.MedalLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        app:turn="1"
-        app:speed="2000"
-        app:direction="right">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:onClick="fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/medal2"
-            app:fabSize="normal" />
-    </com.skydoves.medal.MedalLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="fab"
+      android:src="@drawable/medal2"
+      app:fabSize="normal" />
+  </com.skydoves.medal.MedalLayout>
 </RelativeLayout>

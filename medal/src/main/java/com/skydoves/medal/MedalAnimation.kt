@@ -45,10 +45,10 @@ class MedalAnimation(private val builder: Builder) : Animation() {
 
   init {
     this.degreeX = builder.degreeX.toFloat()
-    this.degreeY = (DEFAULT_DEGREE * builder.turn).toFloat()
+    this.degreeY = (360 * builder.turn).toFloat()
     this.degreeZ = builder.degreeZ.toFloat()
 
-    if (builder.direction == LEFT) {
+    if (builder.direction == MedalDirection.LEFT) {
       this.degreeY = -this.degreeY
     }
 
@@ -87,9 +87,10 @@ class MedalAnimation(private val builder: Builder) : Animation() {
   }
 
   fun startAnimation(view: View) {
-    if (view is ViewGroup && builder.type != PARENT) {
-      for (i in 0 until view.childCount)
+    if (view is ViewGroup && builder.target == MedalTarget.CHILDREN) {
+      for (i in 0 until view.childCount) {
         view.getChildAt(i).startAnimation(builder.build())
+      }
     } else {
       view.startAnimation(builder.build())
     }
@@ -98,22 +99,22 @@ class MedalAnimation(private val builder: Builder) : Animation() {
   /** builder class for creating [MedalAnimation]. */
   class Builder {
     @JvmField
-    var type = DEFAULT_TARGET
+    var target: MedalTarget = MedalTarget.CHILDREN
     @JvmField
-    var direction = DEFAULT_DIRECTION
+    var direction: MedalDirection = MedalDirection.RIGHT
     @JvmField
-    var turn = DEFAULT_TURN
+    var turn = 1
     @JvmField
-    var loop = DEFAULT_LOOP
+    var loop = 0
     @JvmField
-    var speed = DEFAULT_SPEED
+    var speed = 2500
     @JvmField
-    var degreeX = DEFAULT_DEGREE_X
+    var degreeX = 0
     @JvmField
-    var degreeZ = DEFAULT_DEGREE_Z
+    var degreeZ = 0
 
-    fun setType(type: Int): Builder = apply { this.type = type }
-    fun setDirection(direction: Int): Builder = apply { this.direction = direction }
+    fun setTarget(medalTarget: MedalTarget): Builder = apply { this.target = medalTarget }
+    fun setDirection(medalDirection: MedalDirection): Builder = apply { this.direction = medalDirection }
     fun setTurn(turn: Int): Builder = apply { this.turn = turn }
     fun setLoop(loop: Int): Builder = apply { this.loop = loop }
     fun setSpeed(speed: Int): Builder = apply { this.speed = speed }
@@ -122,18 +123,5 @@ class MedalAnimation(private val builder: Builder) : Animation() {
     fun build(): MedalAnimation {
       return MedalAnimation(this)
     }
-  }
-
-  companion object {
-    const val PARENT = 1
-    const val LEFT = 1
-    const val DEFAULT_TARGET = 0
-    const val DEFAULT_DEGREE = 360
-    const val DEFAULT_DIRECTION = 0
-    const val DEFAULT_TURN = 0
-    const val DEFAULT_LOOP = 0
-    const val DEFAULT_SPEED = 2500
-    const val DEFAULT_DEGREE_X = 0
-    const val DEFAULT_DEGREE_Z = 0
   }
 }

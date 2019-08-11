@@ -31,7 +31,9 @@ import android.widget.FrameLayout
 /** MedalLayout implements medal effects for itself and child views. */
 class MedalLayout : FrameLayout {
 
-  lateinit var medalAnimation: MedalAnimation
+  private var isStarted: Boolean = false
+  private var autoStart: Boolean = true
+  private lateinit var medalAnimation: MedalAnimation
 
   constructor(context: Context) : super(context)
 
@@ -55,20 +57,28 @@ class MedalLayout : FrameLayout {
 
   private fun setTypeArray(typedArray: TypedArray) {
     try {
-      this.medalAnimation = MedalAnimation.Builder()
+      val builder = MedalAnimation.Builder()
         .setDegreeX(
-          typedArray.getInt(R.styleable.MedalLayout_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
+          typedArray.getInt(R.styleable.MedalLayout_degreeX, 0))
         .setDegreeZ(
-          typedArray.getInt(R.styleable.MedalLayout_degreeZ, MedalAnimation.DEFAULT_DEGREE_Z))
-        .setDirection(
-          typedArray.getInt(
-            R.styleable.MedalLayout_direction, MedalAnimation.DEFAULT_DIRECTION))
+          typedArray.getInt(R.styleable.MedalLayout_degreeZ, 0))
         .setSpeed(
-          typedArray.getInt(R.styleable.MedalLayout_speed, MedalAnimation.DEFAULT_SPEED))
-        .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, MedalAnimation.DEFAULT_TURN))
-        .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.DEFAULT_TARGET))
-        .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, MedalAnimation.DEFAULT_LOOP))
-        .build()
+          typedArray.getInt(R.styleable.MedalLayout_speed, 2500))
+        .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, 1))
+        .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, 0))
+
+      val target = typedArray.getInt(R.styleable.MedalLayout_target, 0)
+      var medalTarget = MedalTarget.CHILDREN
+      if (target == 1) medalTarget = MedalTarget.PARENT
+      builder.setTarget(medalTarget)
+
+      val direction = typedArray.getInt(R.styleable.MedalLayout_direction, 0)
+      var medalDirection = MedalDirection.RIGHT
+      if (direction == 1) medalDirection = MedalDirection.LEFT
+      builder.setDirection(medalDirection)
+
+      this.medalAnimation = builder.build()
+      this.autoStart = typedArray.getBoolean(R.styleable.MedalLayout_autoStart, autoStart)
     } finally {
       typedArray.recycle()
     }
@@ -76,6 +86,21 @@ class MedalLayout : FrameLayout {
 
   override fun onFinishInflate() {
     super.onFinishInflate()
-    this.medalAnimation.startAnimation(this)
+    if (this.autoStart) {
+      startAnimation()
+    }
+  }
+
+  /** start medal animation. */
+  fun startAnimation() {
+    if (!isStarted()) {
+      this.medalAnimation.startAnimation(this)
+      this.isStarted = true
+    }
+  }
+
+  /** gets the medal animation is started or not. */
+  fun isStarted(): Boolean {
+    return this.isStarted
   }
 }

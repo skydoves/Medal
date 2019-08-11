@@ -26,6 +26,7 @@ package com.skydoves.medaldemo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.skydoves.medal.MedalAnimation
+import com.skydoves.medal.MedalDirection
 import com.skydoves.medal.medalAnimation
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -39,7 +40,7 @@ class ExampleActivity : AppCompatActivity() {
     medalAnimationTextView.startAnimation(textView_title)
 
     val medalAnimation = medalAnimation {
-      direction = MedalAnimation.LEFT
+      direction = MedalDirection.LEFT
       speed = 4200
       turn = 4
     }

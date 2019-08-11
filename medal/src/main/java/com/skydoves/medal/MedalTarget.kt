@@ -21,13 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.skydoves.medaldemo
+package com.skydoves.medal
 
-import android.graphics.drawable.Drawable
-
-data class RankingItem(
-  val medal: Drawable,
-  val profile: Drawable,
-  val name: String,
-  val content: String
-)
+/** MedalDirection sets target of the medal effect. */
+enum class MedalTarget {
+  CHILDREN, PARENT
+}

@@ -1,361 +1,357 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/background"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+      android:id="@+id/textView_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:text="Medal"
+      android:textColor="#3d95c9"
+      android:textSize="30sp"
+      android:textStyle="bold" />
+  </RelativeLayout>
+
+  <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/background">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
-
-        <TextView
-            android:id="@+id/textView_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Medal"
-            android:layout_centerInParent="true"
-            android:textColor="#3d95c9"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
-
-    </RelativeLayout>
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="4">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:direction="right"
+        app:speed="1500"
+        app:turn="1">
 
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="1"
-                app:speed="1500">
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal2" />
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal2"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
+      </com.skydoves.medal.MedalLayout>
 
-            </com.skydoves.medal.MedalLayout>
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:direction="right"
+        app:speed="2300"
+        app:turn="2">
 
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="2"
-                app:speed="2300">
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal2" />
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal2"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
+      </com.skydoves.medal.MedalLayout>
 
-            </com.skydoves.medal.MedalLayout>
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:direction="right"
+        app:speed="3200"
+        app:turn="3">
 
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="3"
-                app:speed="3200">
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal2" />
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal2"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
+      </com.skydoves.medal.MedalLayout>
 
-            </com.skydoves.medal.MedalLayout>
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:direction="right"
+        app:speed="8000"
+        app:turn="10">
 
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="10"
-                app:speed="8000">
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal2" />
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal2"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="1"
-                app:degreeX="360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal1"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="1"
-                app:degreeX="360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal1"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="2"
-                app:degreeX="360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal1"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="2"
-                app:degreeX="360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal1"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="1"
-                app:degreeZ="360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal8"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="1"
-                app:degreeZ="-360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal8"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="2"
-                app:degreeZ="360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal8"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:direction="right"
-                app:turn="2"
-                app:degreeZ="-360"
-                app:speed="2000">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/medal8"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"/>
-
-            </com.skydoves.medal.MedalLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:degreeX="360"
-                app:degreeZ="360"
-                app:direction="right"
-                app:speed="4000"
-                app:turn="4">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/medal3" />
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:degreeX="-360"
-                app:degreeZ="-360"
-                app:direction="right"
-                app:speed="4000"
-                app:turn="4">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/medal3" />
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:degreeX="-360"
-                app:degreeZ="360"
-                app:direction="right"
-                app:speed="4000"
-                app:turn="4">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/medal3" />
-
-            </com.skydoves.medal.MedalLayout>
-
-            <com.skydoves.medal.MedalLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:degreeX="360"
-                app:degreeZ="-360"
-                app:direction="right"
-                app:speed="4000"
-                app:turn="4">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_centerInParent="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/medal3" />
-
-            </com.skydoves.medal.MedalLayout>
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/badge"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_centerInParent="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/medal6" />
-
-        </RelativeLayout>
-
+      </com.skydoves.medal.MedalLayout>
     </LinearLayout>
 
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="4">
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="1">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal1" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="1">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal1" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="2">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal1" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="2">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal1" />
+
+      </com.skydoves.medal.MedalLayout>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="4">
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeZ="360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="1">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal8" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeZ="-360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="1">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal8" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeZ="360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="2">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal8" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeZ="-360"
+        app:direction="right"
+        app:speed="2000"
+        app:turn="2">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal8" />
+
+      </com.skydoves.medal.MedalLayout>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="4">
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="360"
+        app:degreeZ="360"
+        app:direction="right"
+        app:speed="4000"
+        app:turn="4">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal3" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="-360"
+        app:degreeZ="-360"
+        app:direction="right"
+        app:speed="4000"
+        app:turn="4">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal3" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="-360"
+        app:degreeZ="360"
+        app:direction="right"
+        app:speed="4000"
+        app:turn="4">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal3" />
+
+      </com.skydoves.medal.MedalLayout>
+
+      <com.skydoves.medal.MedalLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:degreeX="360"
+        app:degreeZ="-360"
+        app:direction="right"
+        app:speed="4000"
+        app:turn="4">
+
+        <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+          android:src="@drawable/medal3" />
+
+      </com.skydoves.medal.MedalLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <ImageView
+        android:id="@+id/badge"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/medal6" />
+    </RelativeLayout>
+  </LinearLayout>
 </LinearLayout>
