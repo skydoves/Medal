@@ -1,8 +1,10 @@
 # Medal
 ![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
-[![Build Status](https://travis-ci.org/skydoves/Medal.svg?branch=master)](https://travis-ci.org/skydoves/Medal) </br>
-Easy way to implement medal effect for Android. <br>
+[![Build Status](https://travis-ci.org/skydoves/Medal.svg?branch=master)](https://travis-ci.org/skydoves/Medal) 
+[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23374-orange)](https://androidweekly.net/issues/issue-374)</br>
+
+🏅An easy way to implement medal effect for Android. <br>
 
 ![gif0](https://user-images.githubusercontent.com/24237865/53584338-b8b5db00-3bc6-11e9-8cfd-9c8f2ad7cc90.gif)
 ![gif1](https://user-images.githubusercontent.com/24237865/53584339-b94e7180-3bc6-11e9-8518-1bbb87b8f4ae.gif)
