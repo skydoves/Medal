@@ -25,4 +25,4 @@ package com.skydoves.medaldemo
 
 import android.graphics.drawable.Drawable
 
-class RankingItem(val medal: Drawable, val profile: Drawable, val name: String, val content: String)
+data class RankingItem(val medal: Drawable, val profile: Drawable, val name: String, val content: String)

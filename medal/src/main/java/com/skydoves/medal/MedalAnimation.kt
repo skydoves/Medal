@@ -29,9 +29,9 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.Transformation
 
-/** create a [MedalAnimation] by [MedalAnimation.Builder] using dsl. */
+/** creates a [MedalAnimation] by [MedalAnimation.Builder] using dsl. */
 fun medalAnimation(block: MedalAnimation.Builder.() -> Unit): MedalAnimation =
-    MedalAnimation.Builder().apply(block).build()
+  MedalAnimation.Builder().apply(block).build()
 
 /** MedalAnimation implements medal effects for views. */
 class MedalAnimation(private val builder: Builder) : Animation() {
@@ -55,7 +55,7 @@ class MedalAnimation(private val builder: Builder) : Animation() {
     this.duration = builder.speed.toLong()
 
     if (builder.loop == 0) {
-      this.repeatCount = Animation.INFINITE
+      this.repeatCount = INFINITE
     } else {
       this.repeatCount = builder.loop - 1
     }

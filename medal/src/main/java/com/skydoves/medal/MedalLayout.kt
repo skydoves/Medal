@@ -54,20 +54,24 @@ class MedalLayout : FrameLayout {
   }
 
   private fun setTypeArray(typedArray: TypedArray) {
-    this.medalAnimation = MedalAnimation.Builder()
+    try {
+      this.medalAnimation = MedalAnimation.Builder()
         .setDegreeX(
-            typedArray.getInt(R.styleable.MedalLayout_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
+          typedArray.getInt(R.styleable.MedalLayout_degreeX, MedalAnimation.DEFAULT_DEGREE_X))
         .setDegreeZ(
-            typedArray.getInt(R.styleable.MedalLayout_degreeZ, MedalAnimation.DEFAULT_DEGREE_Z))
+          typedArray.getInt(R.styleable.MedalLayout_degreeZ, MedalAnimation.DEFAULT_DEGREE_Z))
         .setDirection(
-            typedArray.getInt(
-                R.styleable.MedalLayout_direction, MedalAnimation.DEFAULT_DIRECTION))
+          typedArray.getInt(
+            R.styleable.MedalLayout_direction, MedalAnimation.DEFAULT_DIRECTION))
         .setSpeed(
-            typedArray.getInt(R.styleable.MedalLayout_speed, MedalAnimation.DEFAULT_SPEED))
+          typedArray.getInt(R.styleable.MedalLayout_speed, MedalAnimation.DEFAULT_SPEED))
         .setTurn(typedArray.getInt(R.styleable.MedalLayout_turn, MedalAnimation.DEFAULT_TURN))
         .setType(typedArray.getInt(R.styleable.MedalLayout_type, MedalAnimation.DEFAULT_TARGET))
         .setLoop(typedArray.getInt(R.styleable.MedalLayout_loop, MedalAnimation.DEFAULT_LOOP))
         .build()
+    } finally {
+      typedArray.recycle()
+    }
   }
 
   override fun onFinishInflate() {

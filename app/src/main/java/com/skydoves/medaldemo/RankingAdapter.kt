@@ -34,7 +34,11 @@ import android.widget.TextView
 import com.skydoves.medal.MedalAnimation
 import java.util.ArrayList
 
-class RankingAdapter(private val context: Context, private val layout: Int, private val data: ArrayList<RankingItem>) : BaseAdapter() {
+class RankingAdapter(
+  private val context: Context,
+  private val layout: Int,
+  private val data: ArrayList<RankingItem>
+) : BaseAdapter() {
 
   override fun getCount(): Int {
     return data.size
